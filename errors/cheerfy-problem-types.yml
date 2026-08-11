@@ -1,0 +1,38 @@
+generated: '2026-08-10'
+method: probed
+source: live HTTP probes of https://webhook.cheerfy.com/ and https://api.cheerfy.com/
+format: detail-envelope
+note: >-
+  Cheerfy publishes no error reference, and there is no OpenAPI to derive 4xx/5xx responses from.
+  This catalog records the error shapes actually observed on the live hosts. The envelope is the
+  Django REST Framework default — a JSON object with a single "detail" string — not RFC 9457
+  problem+json: responses carry Content-Type application/json, and no type, title, status or
+  instance members.
+envelope:
+  content_type: application/json
+  shape: '{"detail": "<message>"}'
+  rfc9457: false
+  members: [detail]
+  error_code_field: null
+problems:
+- status: 401
+  title: Authentication credentials were not provided
+  detail: 'Authentication credentials were not provided.'
+  content_type: application/json
+  headers: {WWW-Authenticate: Token}
+  observed_on: https://webhook.cheerfy.com/
+  methods: [GET, POST, OPTIONS]
+  fetched: '2026-08-10'
+- status: 503
+  title: Service Unavailable
+  detail: HTML error page returned by the AWS load balancer, not a JSON error body
+  content_type: text/html
+  observed_on: https://api.cheerfy.com/
+  note: >-
+    api.cheerfy.com is a dead hostname — it CNAMEs to webhook.cheerfy.com and on to an AWS ELB that
+    has no rule for this Host header, so every path returns 503.
+  fetched: '2026-08-10'
+gaps:
+- no published error-code reference or error catalog
+- errors are not RFC 9457 problem+json and carry no machine-readable error code
+- validation and business-rule error shapes are unobservable without credentials

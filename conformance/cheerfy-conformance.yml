@@ -1,0 +1,48 @@
+generated: '2026-08-10'
+method: searched
+source: https://www.en.cheerfy.com/legal/business-services
+note: >-
+  There is no machine-readable specification to derive conformance from, so every entry below is
+  either read from Cheerfy's published legal terms or established by live probe. GDPR is the only
+  regime Cheerfy explicitly commits to. No security certification (SOC 2, ISO 27001, PCI DSS) is
+  claimed anywhere on the public site, and no trust center exists — so no Compliance pointer is
+  emitted from this file.
+standards:
+- id: gdpr
+  conforms: true
+  evidence: >-
+    Business services terms set out a joint-controller arrangement under GDPR Article 26 for
+    Cheerfy Loyalty and a processor arrangement under Article 28 for Cheerfy Shop, with explicit
+    references to Articles 13, 14, 28 and 32-36.
+  source: https://www.en.cheerfy.com/legal/business-services
+- id: oauth2
+  conforms: false
+  evidence: >-
+    No OAuth authorization-server metadata is served on any host; the live API host challenges with
+    "WWW-Authenticate: Token" (opaque token), not Bearer/OAuth.
+- id: oidc
+  conforms: false
+  evidence: /.well-known/openid-configuration returns 404/503/307 on every Cheerfy host
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: >-
+    Errors use the Django REST Framework {"detail": "..."} envelope with Content-Type
+    application/json; no application/problem+json and no type/title/status members.
+- id: rfc9116-security-txt
+  conforms: false
+  evidence: /.well-known/security.txt is not served on any Cheerfy host
+- id: rfc8615-well-known
+  conforms: false
+  evidence: no /.well-known/ document is served on any host — see well-known/cheerfy-well-known.yml
+- id: openapi
+  conforms: false
+  evidence: >-
+    No OpenAPI/Swagger document at any probed location on cheerfy.com, docs.cheerfy.com,
+    api.cheerfy.com, webhook.cheerfy.com, auth.cheerfy.com or admin.cheerfy.com.
+- id: a2a-agent-card
+  conforms: false
+  evidence: >-
+    /.well-known/agent-card.json and /.well-known/agent.json miss on every host; admin.cheerfy.com
+    answers 200 with an HTML soft-404 body, which is not a card.
+certifications: []
+trust_center: null

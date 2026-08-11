@@ -1,0 +1,29 @@
+generated: '2026-08-10'
+method: searched
+source: public package-registry searches + GitHub repository search
+note: >-
+  No first-party Cheerfy client library exists in any public registry. Cheerfy publishes no SDK
+  links on its site or in its documentation, and there is no Cheerfy GitHub organization. Recorded
+  as a verified absence — no SDKs pointer is emitted from this file.
+packages: []
+package_count: 0
+registries_searched:
+- {registry: npm, query: cheerfy, url: 'https://registry.npmjs.org/-/v1/search?text=cheerfy', results: 0}
+- {registry: pypi, query: cheerfy, url: 'https://pypi.org/pypi/cheerfy/json', status: 404}
+- {registry: rubygems, query: cheerfy, url: 'https://rubygems.org/api/v1/gems/cheerfy.json', status: 404}
+- {registry: packagist, query: cheerfy, url: 'https://packagist.org/search.json?q=cheerfy', results: 0}
+github:
+  organization: null
+  note: >-
+    github.com/cheerfy is an individual user account (1 public repo, no name, no company website)
+    created 2021-03-09, not a Cheerfy engineering organization. No GitHubOrganization pointer is
+    emitted.
+  third_party_repositories:
+  - name: morper86/cheerfy-apis-automatization
+    url: https://github.com/morper86/cheerfy-apis-automatization
+    official: false
+    note: empty repository — GitHub contents API returns "This repository is empty"
+  - name: ticojch/Cheerfy-vJava
+    url: https://github.com/ticojch/Cheerfy-vJava
+    official: false
+    note: third-party promotions app by Adatio Sistemas S.L.; not a Cheerfy client library

@@ -1,0 +1,66 @@
+generated: '2026-08-10'
+method: searched
+source: https://www.en.cheerfy.com/academy
+feed: https://www.en.cheerfy.com/academy?format=rss
+note: >-
+  Cheerfy runs a numbered, dated product-release series ("#N Product Updates" / "#N Product News")
+  on its Academy blog. It is a product changelog, not an API changelog — no entry records a version
+  bump, a breaking change or a deprecation on the Loyalty Card or Coupons API. Recent window only;
+  the live feed is the source of truth.
+scheme: numbered-release-notes
+current_version: '#35'
+current_date: '2026-01-07'
+api_versioning: null
+breaking_change_policy: null
+entries:
+- version: '#35'
+  date: '2026-01-07'
+  title: 'Product Updates | Upselling, TheFork, Downgrades, Cashback at Shop'
+  url: https://www.en.cheerfy.com/academy/2025/11/17/32-product-updates-new-exports-documentation-image-based-coupons-3fkjj-zfjxb-ggs5c
+  breaking: false
+  highlights: [upselling, TheFork integration, plan downgrades, cashback at Cheerfy Shop]
+- version: '#34'
+  date: '2026-01-07'
+  title: 'Product Updates | Cheerfy Cashback: Innovation in Loyalty'
+  url: https://www.en.cheerfy.com/academy/2025/11/17/32-product-updates-new-exports-documentation-image-based-coupons-3fkjj-zfjxb
+  breaking: false
+  highlights: [Cheerfy Cashback]
+- version: '#33'
+  date: '2026-01-07'
+  title: 'Product Updates | Discover everything about Cheerfy Widgets'
+  url: https://www.en.cheerfy.com/academy/2025/11/17/32-product-updates-new-exports-documentation-image-based-coupons-3fkjj-zfjxb-4mrse
+  breaking: false
+  highlights: [Cheerfy Widgets]
+- version: '#32'
+  date: '2025-11-17'
+  title: 'Product Updates | New Exports, Documentation, Image-Based Coupons'
+  url: https://www.en.cheerfy.com/academy/2025/11/17/32-product-updates-new-exports-documentation-image-based-coupons
+  breaking: false
+  highlights: [new exports, API automation and dedicated documentation, image-based coupons]
+- version: '#31'
+  date: '2024-04-11'
+  title: 'Product News | Fast Track, Integration with BDP, New Export Documentation'
+  url: https://www.en.cheerfy.com/academy/30-product-news-sgl62
+  breaking: false
+  highlights: [fast track, BDP integration, export documentation]
+- version: '#30'
+  date: '2024-02-26'
+  title: 'Product News | Concierge, Promotion Dashboards, Service Based Tracking'
+  url: https://www.en.cheerfy.com/academy/30-product-news
+  breaking: false
+  highlights: [concierge, promotion dashboards, service-based tracking]
+- version: '#29'
+  date: '2024-01-19'
+  title: 'Product News | Cheerfy Gifts, Last & Kiosk Manual Identification'
+  url: https://www.en.cheerfy.com/academy/29-product-news
+  breaking: false
+  highlights: [Cheerfy Gifts, kiosk manual identification]
+- version: '#28'
+  date: '2023-12-05'
+  title: 'Product News | Order and Pay at the Table, Kiosk Virtual Buzzer, Sales Dashboards'
+  url: https://www.en.cheerfy.com/academy/28-product-news
+  breaking: false
+  highlights: [order and pay at table, kiosk virtual buzzer, sales dashboards]
+entry_count: 8
+x-evidence:
+- {url: 'https://www.en.cheerfy.com/academy?format=rss', http_status: 200, fetched: '2026-08-10'}

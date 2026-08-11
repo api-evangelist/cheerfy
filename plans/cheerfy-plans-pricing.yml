@@ -1,0 +1,72 @@
+generated: '2026-08-10'
+method: searched
+source: https://www.en.cheerfy.com/pricing/loyalty
+note: >-
+  Cheerfy publishes list pricing for the Cheerfy Loyalty product, priced per Point of Sale with a
+  bundled quota of customer-linked sales and a percentage overage above it, capped monthly. There
+  is no API-specific plan, no metered API pricing and no developer tier — API access is part of the
+  platform subscription, and the terms of service state only that "CHEERFY provides an API to allow
+  the Business to engage third party service providers".
+currency: EUR
+billing_periods: [monthly, annual]
+unit: per point of sale
+plan_count: 3
+plans:
+- name: Starter
+  price_monthly: 85
+  price_annual_per_month: 69
+  currency: EUR
+  billing_period: month
+  unit: point of sale
+  included_quota:
+    metric: customer-linked sales
+    amount: 8500
+    currency: EUR
+    period: month
+  overage:
+    rate: '1%'
+    applies_to: customer-linked sales above the included quota
+    monthly_cap: 199
+    cap_unit: per point of sale
+  limits:
+    emails_per_month: 5000
+- name: Professional
+  price_monthly: 99
+  price_annual_per_month: 85
+  currency: EUR
+  billing_period: month
+  unit: point of sale
+  included_quota:
+    metric: customer-linked sales
+    amount: 9900
+    currency: EUR
+    period: month
+  overage:
+    rate: '1%'
+    applies_to: customer-linked sales above the included quota
+    monthly_cap: 299
+    cap_unit: per point of sale
+  limits:
+    emails_per_month: 20000
+- name: Enterprise
+  price_monthly: null
+  price_annual_per_month: null
+  currency: EUR
+  billing_period: month
+  unit: point of sale
+  pricing_model: contact-sales
+  note: listed as "Ad-Hoc" pricing and "Ad-Hoc" monthly email allowance
+  limits:
+    emails_per_month: null
+add_ons:
+- {name: Registration fee, price: 99, currency: EUR, unit: per brand, recurrence: one-time}
+- {name: SMS bundle, price: 8.90, currency: EUR, unit: per 100 messages}
+- {name: Email bundle, price: 2.90, currency: EUR, unit: per 1000 messages}
+- {name: Setup service (optional), price: 499, currency: EUR, unit: per day (8 hours)}
+- {name: Wi-Fi router, price: 99, currency: EUR, unit: per unit, recurrence: one-time}
+api_pricing:
+  metered: false
+  developer_tier: false
+  note: no published per-call, per-key or API-specific pricing
+x-evidence:
+- {url: 'https://www.en.cheerfy.com/pricing/loyalty', http_status: 200, fetched: '2026-08-10'}

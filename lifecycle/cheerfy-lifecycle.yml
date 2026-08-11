@@ -1,0 +1,48 @@
+generated: '2026-08-10'
+method: searched
+source: https://www.en.cheerfy.com/legal/business-services
+note: >-
+  Cheerfy publishes no API versioning policy, no deprecation policy, no SLA and no status page.
+  The business-services terms commit only to taking "reasonable steps to remedy" a malfunction —
+  there is no uptime target. Recorded as verified absences: no StatusPage and no Deprecation
+  pointer is emitted from this file, because neither surface exists.
+versioning:
+  scheme: null
+  current: null
+  docs: null
+  documented: false
+deprecation:
+  policy_url: null
+  sunset_header: false
+  deprecation_header: false
+  documented: false
+sla:
+  url: null
+  uptime_target: null
+  documented: false
+  evidence: >-
+    Business services terms state CHEERFY will take reasonable steps to remedy malfunctions; no
+    uptime commitment or service credit is defined.
+status_page:
+  url: null
+  probed:
+  - {url: 'https://status.cheerfy.com/', result: no DNS / connection failed}
+  - {url: 'https://cheerfy.statuspage.io/', http_status: 200, result: 'not a status page — redirects to the Atlassian Statuspage marketing site'}
+support:
+  email: support@cheerfy.com
+  url: https://www.en.cheerfy.com/contact
+  source: https://www.en.cheerfy.com/legal/business-services
+release_notes:
+  url: https://www.en.cheerfy.com/academy
+  detail: changelog/cheerfy-changelog.yml
+  note: numbered product-release series; product-level, not API-level
+deprecated_operations: []
+hosts:
+- host: api.cheerfy.com
+  state: dead
+  http_status: 503
+  note: >-
+    The published API hostname CNAMEs to webhook.cheerfy.com and on to an AWS ELB with no rule for
+    this Host header. Every path returns 503. If this hostname is still the documented base URL for
+    the Loyalty Card / Coupons APIs, it is broken for every integrator.
+  fetched: '2026-08-10'

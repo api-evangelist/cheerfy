@@ -1,0 +1,24 @@
+generated: '2026-08-10'
+method: searched
+source: https://docs.cheerfy.com/es/cheerfy-loyalty/api-tarjeta-de-fidelizacion
+note: >-
+  Cheerfy publishes no rate limits. The Loyalty Card API and Coupons API reference pages on
+  docs.cheerfy.com 307-redirect into the GitBook application shell and render nothing to a
+  non-JavaScript client, and no rate-limit language appears anywhere on the public marketing site
+  or in the business-services terms. Live probes of the one reachable API host
+  (webhook.cheerfy.com) return no RateLimit-*, X-RateLimit-* or Retry-After headers on either an
+  authenticated-challenge (401) or an OPTIONS response. An honest zero, not an omission.
+limit_count: 0
+limits: []
+response_headers:
+  observed: []
+  standard_ratelimit_headers: false
+  retry_after: false
+exhaustion_status_code: null
+plan_quotas:
+  note: >-
+    The published plan quotas are commercial, not API rate limits — bundled customer-linked sales
+    volume plus monthly email/SMS message allowances. See plans/cheerfy-plans-pricing.yml.
+x-evidence:
+- {url: 'https://docs.cheerfy.com/es/cheerfy-loyalty/api-tarjeta-de-fidelizacion', http_status: 307, fetched: '2026-08-10', note: redirects to app.gitbook.com SPA shell}
+- {url: 'https://webhook.cheerfy.com/', http_status: 401, fetched: '2026-08-10', note: no rate-limit headers present in response}

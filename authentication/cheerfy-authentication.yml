@@ -1,0 +1,50 @@
+generated: '2026-08-10'
+method: probed
+source: live HTTP probe of https://webhook.cheerfy.com/
+note: >-
+  There is no OpenAPI to derive securitySchemes from, and the Loyalty Card / Coupons API reference
+  pages on docs.cheerfy.com are unreadable to a non-JavaScript client. This profile records what a
+  live probe of the one reachable Cheerfy API host actually returned: an HTTP 401 carrying
+  "WWW-Authenticate: Token", the Django REST Framework token-authentication challenge. The scheme
+  name, header form and error envelope below are observed, not inferred from documentation.
+summary:
+  types: [http]
+  api_key_in: [header]
+  oauth2_flows: []
+  openid_connect: false
+  mutual_tls: false
+schemes:
+- name: TokenAuth
+  type: http
+  scheme: Token
+  in: header
+  parameter_name: Authorization
+  form: 'Authorization: Token <key>'
+  host: https://webhook.cheerfy.com
+  sources: [probe]
+  evidence:
+    url: https://webhook.cheerfy.com/
+    http_status: 401
+    www_authenticate: Token
+    body: '{"detail":"Authentication credentials were not provided."}'
+    server: gunicorn
+    framework: Django REST Framework (inferred from the challenge + error envelope shape)
+    fetched: '2026-08-10'
+oauth:
+  published: false
+  discovery:
+    openid_configuration: not served (404/503/307 on every Cheerfy host)
+    oauth_authorization_server: not served (404/503/307 on every Cheerfy host)
+  note: >-
+    auth.cheerfy.com is referenced by the admin console at admin.cheerfy.com/login/ but returns 404
+    on / and on both OAuth/OIDC discovery paths, so no authorization-server metadata is public.
+key_issuance:
+  self_service: false
+  note: >-
+    No public sign-up for API credentials. Credentials are issued inside the tenant admin console
+    (https://admin.cheerfy.com/login/); the business-services terms state only that "CHEERFY
+    provides an API to allow the Business to engage third party service providers".
+gaps:
+- no machine-readable specification declaring securitySchemes
+- no public authentication reference page a machine can read
+- no OAuth or OIDC discovery document on any host

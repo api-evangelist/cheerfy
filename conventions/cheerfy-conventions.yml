@@ -1,0 +1,63 @@
+generated: '2026-08-10'
+method: probed
+source: live HTTP probes of Cheerfy hosts + https://www.en.cheerfy.com/legal/business-services
+note: >-
+  Cross-cutting request/response semantics for the Cheerfy API, assembled from what could actually
+  be observed. Cheerfy publishes no machine-readable specification and its API reference pages are
+  unreadable to a non-JavaScript client, so most conventions below are recorded as unknown rather
+  than guessed. NO idempotency contract is documented or observable — no Idempotency pointer is
+  emitted for this provider.
+authentication:
+  style: token
+  header: 'Authorization: Token <key>'
+  observed_challenge: 'WWW-Authenticate: Token'
+  detail: authentication/cheerfy-authentication.yml
+idempotency:
+  supported: unknown
+  documented: false
+  header: null
+  note: >-
+    No idempotency key header, parameter or retry-safety statement appears in any public Cheerfy
+    surface, and none is observable without credentials.
+pagination:
+  style: unknown
+  documented: false
+  parameters: []
+  response_fields: []
+field_expansion:
+  supported: unknown
+  documented: false
+metadata:
+  supported: unknown
+  documented: false
+request_tracing:
+  request_id_header: null
+  observed_headers: [x-frame-options, x-content-type-options, referrer-policy, vary]
+  note: no correlation or request-id header observed on live responses
+versioning:
+  scheme: unknown
+  current: null
+  documented: false
+  detail: lifecycle/cheerfy-lifecycle.yml
+error_envelope:
+  content_type: application/json
+  shape: '{"detail": "<message>"}'
+  rfc9457: false
+  detail: errors/cheerfy-problem-types.yml
+rate_limit_signaling:
+  headers: []
+  documented: false
+  detail: rate-limits/cheerfy-rate-limits.yml
+transport:
+  https: true
+  http2: true
+  tls_version: TLSv1.2
+  detail: security/cheerfy-domain-security.yml
+hosts:
+- {host: https://webhook.cheerfy.com, role: live API host, server: gunicorn, status: reachable}
+- {host: https://api.cheerfy.com, role: published API hostname, status: 503 dead host}
+- {host: https://auth.cheerfy.com, role: authentication service, status: 404 on all probed paths}
+gaps:
+- no OpenAPI, AsyncAPI, GraphQL SDL or Postman collection published anywhere
+- API reference pages 307-redirect into a GitBook SPA and render nothing server-side
+- api.cheerfy.com resolves but returns 503 on every path

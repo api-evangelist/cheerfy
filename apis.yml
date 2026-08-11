@@ -30,7 +30,7 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-18'
+modified: '2026-08-10'
 tags:
 - Company
 - Restaurants
@@ -66,8 +66,60 @@ common:
   url: https://admin.cheerfy.com/login/
 - type: DomainSecurity
   url: security/cheerfy-domain-security.yml
+- type: APIReference
+  name: Coupons API (API Cupones)
+  url: https://docs.cheerfy.com/es/cheerfy-loyalty/api-cupones
+- type: PrivacyPolicy
+  url: https://www.en.cheerfy.com/legal/privacy-policy
+- type: BlogRSS
+  url: https://www.en.cheerfy.com/academy?format=rss
+- type: Plans
+  name: Cheerfy Loyalty plans and pricing
+  url: plans/cheerfy-plans-pricing.yml
+- type: RateLimits
+  name: Rate limits (none published)
+  url: rate-limits/cheerfy-rate-limits.yml
+- type: Authentication
+  name: Authentication profile (probed)
+  url: authentication/cheerfy-authentication.yml
+- type: ErrorCatalog
+  name: Observed error shapes
+  url: errors/cheerfy-problem-types.yml
+- type: Conventions
+  name: API conventions
+  url: conventions/cheerfy-conventions.yml
+- type: ChangeLog
+  name: Product release notes
+  url: changelog/cheerfy-changelog.yml
+- type: Conformance
+  name: Standards conformance
+  url: conformance/cheerfy-conformance.yml
+- type: Lifecycle
+  name: API lifecycle posture
+  url: lifecycle/cheerfy-lifecycle.yml
+- type: LLMsTxt
+  url: llms/cheerfy-llms.txt
 x-enrichment:
-  date: '2026-07-19'
-  status: backfilled
+  date: '2026-08-10'
+  status: enriched
+  artifacts_added: 11
   pass: local-v1
-  note: backfilled from .gitignore signal + verified work evidence
+x-coverage:
+  state: unreadable
+  reason: js-rendered-docs
+  detail: >-
+    Both API reference pages (docs.cheerfy.com/es/cheerfy-loyalty/api-tarjeta-de-fidelizacion and
+    /api-cupones) 307-redirect into the app.gitbook.com JavaScript shell, which serves the same
+    9,883-byte empty page for every path, so the documented Loyalty Card and Coupons endpoints,
+    their base URL and their parameters are unreadable by any machine — and the published API
+    hostname api.cheerfy.com returns 503 on every path.
+  evidence:
+  - url: https://docs.cheerfy.com/es/cheerfy-loyalty/api-tarjeta-de-fidelizacion
+    status: 307
+  - url: https://app.gitbook.com/o/FE20ERj3uqOoV8gciG2a/sites/site_WNSZl/es/cheerfy-loyalty/api-cupones
+    status: 200
+  - url: https://api.cheerfy.com/openapi.json
+    status: 503
+  - url: https://webhook.cheerfy.com/
+    status: 401
+  checked: '2026-08-10'

@@ -1,0 +1,89 @@
+generated: '2026-08-10'
+method: probed
+source: live HTTP probes of every Cheerfy host named in apis.yml plus the hosts discovered in DNS
+note: >-
+  No /.well-known/ document is served on any Cheerfy host. Every path either 404s, 302/307s away
+  from the host, returns 503, or answers 200 with an HTML soft-404 body. Recorded as an absence:
+  no WellKnown or SecurityTxt pointer is emitted from this file, because the provider serves no
+  such document.
+hosts:
+- host: https://www.en.cheerfy.com
+  role: marketing website (Squarespace)
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+- host: https://cheerfy.com
+  role: apex domain, 302 redirect to www.en.cheerfy.com
+  documents:
+  - {path: /.well-known/security.txt, status: 302}
+  - {path: /.well-known/openid-configuration, status: 302}
+  - {path: /.well-known/oauth-authorization-server, status: 302}
+  - {path: /.well-known/api-catalog, status: 302}
+  - {path: /.well-known/ai-plugin.json, status: 302}
+  - {path: /.well-known/agent-card.json, status: 302}
+  - {path: /.well-known/agent.json, status: 302}
+- host: https://docs.cheerfy.com
+  role: developer documentation (GitBook)
+  note: every path 307s to https://app.gitbook.com/o/FE20ERj3uqOoV8gciG2a/sites/site_WNSZl/...
+  documents:
+  - {path: /.well-known/security.txt, status: 307}
+  - {path: /.well-known/openid-configuration, status: 307}
+  - {path: /.well-known/oauth-authorization-server, status: 307}
+  - {path: /.well-known/api-catalog, status: 307}
+  - {path: /.well-known/ai-plugin.json, status: 307}
+  - {path: /.well-known/agent-card.json, status: 307}
+  - {path: /.well-known/agent.json, status: 307}
+- host: https://admin.cheerfy.com
+  role: tenant admin console login
+  note: >-
+    Answers HTTP 200 for EVERY path with an HTML body titled "404 error" — a soft-404 catch-all,
+    not a served document. Treated as a miss on every probe.
+  documents:
+  - {path: /.well-known/security.txt, status: 200, document: false, body: html-soft-404}
+  - {path: /.well-known/openid-configuration, status: 200, document: false, body: html-soft-404}
+  - {path: /.well-known/oauth-authorization-server, status: 200, document: false, body: html-soft-404}
+  - {path: /.well-known/api-catalog, status: 200, document: false, body: html-soft-404}
+  - {path: /.well-known/ai-plugin.json, status: 200, document: false, body: html-soft-404}
+  - {path: /.well-known/agent-card.json, status: 200, document: false, body: html-soft-404}
+  - {path: /.well-known/agent.json, status: 200, document: false, body: html-soft-404}
+- host: https://api.cheerfy.com
+  role: >-
+    published API hostname; CNAME to webhook.cheerfy.com then an AWS ELB
+    (pro-20230601141954965200000005-1853683872.eu-west-1.elb.amazonaws.com)
+  note: DEAD HOST — the load balancer has no rule for this Host header, so every path returns 503.
+  documents:
+  - {path: /, status: 503}
+  - {path: /.well-known/security.txt, status: 503}
+  - {path: /.well-known/openid-configuration, status: 503}
+  - {path: /.well-known/oauth-authorization-server, status: 503}
+  - {path: /.well-known/agent-card.json, status: 503}
+- host: https://webhook.cheerfy.com
+  role: live Cheerfy API host (gunicorn / Django REST Framework); root requires Token auth
+  note: >-
+    Unknown paths answer 200 with an empty JSON body ({}) — a catch-all sink, not a document.
+    No well-known document is served.
+  documents:
+  - {path: /.well-known/security.txt, status: 200, document: false, body: 'empty json {}'}
+  - {path: /.well-known/openid-configuration, status: 200, document: false, body: 'empty json {}'}
+  - {path: /.well-known/oauth-authorization-server, status: 200, document: false, body: 'empty json {}'}
+  - {path: /.well-known/agent-card.json, status: 200, document: false, body: 'empty json {}'}
+- host: https://auth.cheerfy.com
+  role: authentication service referenced by the admin console
+  documents:
+  - {path: /, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/security.txt, status: 404}
+summary:
+  hosts_probed: 7
+  documents_found: 0
+  security_txt: false
+  openid_configuration: false
+  oauth_authorization_server: false
+  api_catalog: false
+  agent_card: false
