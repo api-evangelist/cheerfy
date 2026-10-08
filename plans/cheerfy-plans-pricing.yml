@@ -70,3 +70,31 @@ api_pricing:
   note: no published per-call, per-key or API-specific pricing
 x-evidence:
 - {url: 'https://www.en.cheerfy.com/pricing/loyalty', http_status: 200, fetched: '2026-08-10'}
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - hybrid
+  units: []
+  plans:
+  - name: Starter
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - other
+    periods: []
+  - name: Professional
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - other
+    periods: []
+  - name: Enterprise
+    access: other
+    model: unstated
+    model_how: derived
+    units:
+    - other
+    periods: []
