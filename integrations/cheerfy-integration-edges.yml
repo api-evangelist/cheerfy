@@ -1,0 +1,16 @@
+generated: '2026-10-12'
+method: none
+source:
+- https://zapier.com/apps/cheerfy/integrations
+- https://n8n.io/integrations/cheerfy/
+- https://composio.dev/toolkits/cheerfy
+- https://monid.ai/tools/cheerfy
+checked:
+- https://composio.dev/toolkits/cheerfy
+- https://monid.ai/tools/cheerfy
+- https://n8n.io/integrations/cheerfy/
+- https://zapier.com/apps/cheerfy/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []
