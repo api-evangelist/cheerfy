@@ -64,6 +64,99 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Cheerfy is a company surfaced as a portfolio company of techstars and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+Cheerfy is a customer-engagement and digital-experience platform for restaurants and hospitality brands, bringing CRM and loyalty, online ordering, pay-at-table, self-service kiosks, and a multi-brand marketplace together in a single platform. It centralizes customer data from POS, bookings, Wi-Fi and payment systems, then drives automated SMS, email and push marketing, branded loyalty cards and wallet-ready digital coupons, feedback surveys, and real-time analytics. Cheerfy serves 200+ restaurant brands and publishes developer documentation for its Loyalty Card and Coupons APIs. Backed by Techstars, it was added to the API Evangelist network from a Techstars portfolio lead and enriched from its public developer surface.
 
-Backed by: techstars — https://cheerfy.com/
+**Areas:** Company · Restaurant · Hospitality · CRM · Loyalty · Customer Engagement · Marketing Automation · Online Ordering · Payments
+
+## Cheerfy on APIs.io
+
+Everything profiled for Cheerfy is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/cheerfy/](https://apis.io/providers/cheerfy/)** — or go straight to one of the APIs or properties below.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Cheerfy Authentication](https://apis.io/security/cheerfy/cheerfy-authentication/)
+- [Cheerfy Domain Security](https://apis.io/security/cheerfy/cheerfy-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Cheerfy Plans Pricing](https://apis.io/plans/cheerfy/cheerfy-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Cheerfy Rate Limits](https://apis.io/rate-limits/cheerfy/cheerfy-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://cheerfy.com/)
+- [Documentation](https://docs.cheerfy.com/)
+- [API reference](https://docs.cheerfy.com/es/cheerfy-loyalty/api-tarjeta-de-fidelizacion)
+- [Pricing](https://www.en.cheerfy.com/pricing/loyalty)
+- [Support](https://www.en.cheerfy.com/contact)
+- [Blog](https://www.en.cheerfy.com/academy)
+- [Terms of service](https://www.en.cheerfy.com/legal/business-services)
+- [Privacy policy](https://www.en.cheerfy.com/legal/privacy-policy)
+
+## API Evangelist rating
+
+**Kin Score 27.9** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 55.4 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 15.8 |
+| Developer ergonomics | 19.0 |
+| Access clarity | 69.7 |
+
+**Agent readiness 7.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 22.3** — Payments
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/cheerfy/](https://apis.io/providers/cheerfy/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Cheerfy: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/cheerfy/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
